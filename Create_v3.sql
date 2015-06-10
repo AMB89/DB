@@ -1,7 +1,11 @@
+
+
+
+
 create sequence Mitarbeiterseq start with 1;
 
 CREATE TABLE Mitarbeiter(
-	PersonalNr NUMBER(10) ,
+	PersonalNr NUMBER(10)constraint Mitarbeiter_Pk PRIMARY KEY ,
 	Name VARCHAR2(20) NOT Null,
 	Vorname VARCHAR2(20) NOT NULL,
 	Strasse VARCHAR2(20) NOT NUll,
@@ -21,6 +25,16 @@ CREATE TABLE Ort(
 	NAME VARCHAR2(30) constraint name_PR PRIMARY KEY
 );
 
+   
+CREATE Table Auto(
+	Modell VARCHAR2(50),
+	Sitze NUMBER(2) NOT NULL,
+	Kennzeichen VARCHAR2(15) CONSTRAINT AutoPK PRIMARY KEY
+	--Besitzer NUMBER(10), --CONSTRAINT ZugAuto_Kunde  REFERENCES Kunde(KundenNr)
+	--constraint ZugAuto_Kunde FOREIGN KEY(Besitzer) REFERENCES Kunde(KundenNr)
+	
+);
+
 
 
 create sequence kundenseq start with 1;
@@ -31,22 +45,12 @@ CREATE TABLE Kunde(
 	Name VARCHAR2(20) NOT NULL,
 	Strasse VARCHAR2(20),
 	PLZ VARCHAR2(5) NOT NULL,
-	Stadt VARCHAR2(20) NOT NULL,
-  Auto VARCHAR2 (20) CONSTRAINT AutoSK REFERENCES Auto(Kennzeichen), 
-	Telefonnummer VARCHAR2(50) NOT NULL
-
+	Stadt VARCHAR2(20) NOT NULL, 
+	Telefonnummer VARCHAR2(50) NOT NULL 
+  
 );
 
 
-
-CREATE Table Auto(
-	Modell VARCHAR2(50),
-	Sitze NUMBER(2) NOT NULL,
-	Kennzeichen VARCHAR2(15) CONSTRAINT AutoPK PRIMARY KEY,
-	--Besitzer NUMBER(10), --CONSTRAINT ZugAuto_Kunde  REFERENCES Kunde(KundenNr)
-	--constraint ZugAuto_Kunde FOREIGN KEY(Besitzer) REFERENCES Kunde(KundenNr)
-	
-);
 
 
 
@@ -178,7 +182,10 @@ CREATE TABLE Beziehung_Vermittlung(
 
 
 
+CREATE TABLE Beziehung_Auto_Kunde(
 
-
-
+KundenNr NUMBER(10) CONSTRAINT kundeSk REFERENCES Kunde(KundenNr) ,
+Kennzeichen VARCHAR2(20) CONSTRAINT KennzeichenSk REFERENCES Auto(Kennzeichen)
+	
+);
 
