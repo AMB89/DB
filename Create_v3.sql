@@ -118,25 +118,25 @@ CREATE TABLE Angebot(
 
 
 
-CREATE TABLE Beziehung_Kunde_Gesuch(
-	GesuchNr NUMBER(10), --constraint kunde_gesuch_gesuchNR_pk REFERENCES GESUCH(GesuchNr),
-	KundenNr NUMBER(10), --1constraint kunde_gesuch_KundenNR_pk REFERENCES Kunde(KundenNr),
-	CONSTRAINT kunde_gesuch_gesuchNr_sk FOREIGN KEY(GesuchNr) REFERENCES Gesuch(GesuchNr),
-	CONSTRAINT kunde_gesuch_KundenNr_sk FOREIGN KEY(KundenNr) REFERENCES Kunde(KundenNr)
-
-);
-
-
-
-CREATE TABLE Beziehung_Kunde_Angebot(
-	AngebotNr NUMBER(10),-- constraint kunde_angebot_gesuchNR_pk REFERENCES Angebot(AngebotNr),
-	KundenNr NUMBER(10),-- constraint kunde_angebot_KundenNR_pk REFERENCES Kunde(KundenNr),
-
-	CONSTRAINT kunde_angebot_gesuchNr_sk FOREIGN KEY(AngebotNr) REFERENCES Angebot(AngebotNr),
-	CONSTRAINT kunde_angebot_KundenNr_sk FOREIGN KEY(KundenNr) REFERENCES Kunde(KundenNr)
+--CREATE TABLE Beziehung_Kunde_Gesuch(
+--	GesuchNr NUMBER(10), --constraint kunde_gesuch_gesuchNR_pk REFERENCES GESUCH(GesuchNr),
+--	KundenNr NUMBER(10), --1constraint kunde_gesuch_KundenNR_pk REFERENCES Kunde(KundenNr),
+--	CONSTRAINT kunde_gesuch_gesuchNr_sk FOREIGN KEY(GesuchNr) REFERENCES Gesuch(GesuchNr),
+--	CONSTRAINT kunde_gesuch_KundenNr_sk FOREIGN KEY(KundenNr) REFERENCES Kunde(KundenNr)
+ 
+--);
 
 
-);
+
+--CREATE TABLE Beziehung_Kunde_Angebot(
+--	AngebotNr NUMBER(10),-- constraint kunde_angebot_gesuchNR_pk REFERENCES Angebot(AngebotNr),
+--	KundenNr NUMBER(10),-- constraint kunde_angebot_KundenNR_pk REFERENCES Kunde(KundenNr),
+
+--	CONSTRAINT kunde_angebot_gesuchNr_sk FOREIGN KEY(AngebotNr) REFERENCES Angebot(AngebotNr),
+--	CONSTRAINT kunde_angebot_KundenNr_sk FOREIGN KEY(KundenNr) REFERENCES Kunde(KundenNr)
+
+
+--);
 
 
 
@@ -188,4 +188,11 @@ KundenNr NUMBER(10) CONSTRAINT kundeSk REFERENCES Kunde(KundenNr) ,
 Kennzeichen VARCHAR2(20) CONSTRAINT KennzeichenSk REFERENCES Auto(Kennzeichen)
 
 );
+
+CREATE TABLE Parameter(
+
+BenzinKostenbeteiligung DECIMAL (4,2),
+Vermittlungsgebuer NUMBER (2),
+maximaler_Umweg NUMBER (3)
+);    
 
