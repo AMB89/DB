@@ -170,7 +170,6 @@ INSERT INTO Beziehung_Auto_Kunde VALUES (2, 'BOR - H 9987' );
 INSERT INTO Beziehung_Auto_Kunde VALUES (1, 'DA - MH 312' );
 INSERT INTO Beziehung_Auto_Kunde VALUES (3, 'KI - T 556' );
 INSERT INTO Beziehung_Auto_Kunde VALUES (4, 'HD - JJ 119' );
-INSERT INTO Beziehung_Auto_Kunde VALUES (3, 'KI - T 556' );
 INSERT INTO Beziehung_Auto_Kunde VALUES (5, 'HD - UT 86' );
 INSERT INTO Beziehung_Auto_Kunde VALUES (6, 'WO - KJ 907' );
 INSERT INTO Beziehung_Auto_Kunde VALUES (7, 'DA - MH 312' );
