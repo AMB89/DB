@@ -1,7 +1,8 @@
 
-DROP TABLE Beziehung_Auto_Kunde;     
-drop table Beziehung_Kunde_Gesuch;
-drop table Beziehung_kunde_angebot;
+DROP TABLE Beziehung_Auto_Kunde;
+--drop table Beziehung_Kunde_Gesuch;
+--drop table Beziehung_kunde_angebot;
+DROP TABLE parameter;
 drop table Beziehung_Strecken;
 drop table Beziehung_Vermittlung;
 drop table angebot;
