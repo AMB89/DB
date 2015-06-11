@@ -4,7 +4,22 @@
 --SELECT * FROM angebot WHERE ort_start='Mannheim' AND (ort_ziel='Koeln' OR ort_ueber='Koeln') ;
 --SELECT * from angebot WHERE erfasst_von= (SELECT PersonalNr FROM mitarbeiter WHERE name='Mueller');
 --SELECT Ort_Start,ort_ueber,ort_ziel FROM angebot WHERE ort_start='Mannheim' AND (ort_ziel='Koeln' OR ort_ueber='Koeln') ;
---SELECT * FROM angebot WHERE  Abfahrt<TO_TIMESTAMP( '1-6-15', 'DD-MM-YY') OR Fruehste_Startzeit<TO_TIMESTAMP( '1-6-15', 'DD-MM-YY')
-SELECT * FROM angebot.Fruehste_Startzeit,gesuch.Fruehste_Startzeit WHERE angebot.ort_start=gesuch.ort_start AND  gesuch.ort_start='Mannheim'
---SELECT * FROM angebot,gesuch,Beziehung_Vermittlung WHERE angebot.ort_start=gesuch.ort_start AND  gesuch.ort_start='Mannheim' AND Beziehung_Vermittlung.Fahrt_duerchgefuehrt=1
+--SELECT * FROM angebot WHERE  Abfahrt<TO_DATE( '1-6-15', 'DD-MM-YY') OR Fruehste_Startzeit<TO_DATE( '1-6-15', 'DD-MM-YY')
+--SELECT * FROM angebot,gesuch WHERE angebot.ort_start=gesuch.ort_start AND  gesuch.ort_start='Mannheim'  AND 
 
+------  Alle durchgeführten fahrten // Alle durchgeführte Fahrten Beziehung_Vermittlung.Fahrt_duerchgefuehrt=1// Vermittelte Fahrten Beziehung_Vermittlung.Fahrt_duerchgefuehrt=0
+--SELECT angebot.Ort_Start,angebot.ort_Ziel, angebot.Abfahrt, Beziehung_Vermittlung.Fahrt_duerchgefuehrt FROM  angebot,Beziehung_Vermittlung WHERE Beziehung_Vermittlung.Fahrt_duerchgefuehrt=1
+--AND angebot.Angebotnr = Beziehung_Vermittlung.AngebotNr
+
+------- Alle Gesuche, mit der Distance > 100 KM
+--SELECT Gesuch.ort_start, Gesuch.ort_ziel,Beziehung_Strecken.km FROM Gesuch,Beziehung_Strecken WHERE Beziehung_Strecken.km>100 AND Beziehung_Strecken.ort_start = Gesuch.ort_start
+--AND Beziehung_Strecken.ort_ziel = Gesuch.ort_ziel
+
+
+--------Alle Fahrer --------
+--SELECT distinct kunde.name FROM Kunde, Angebot WHERE Kunde.KundenNr = Angebot.Bietender
+
+SELECT * FROM kunde
+
+--------Alle Fahrer, die Auto besitzen --------
+--SELECT Kunde.name , kunde.vorname FROM Kunde , Beziehung_Auto_Kunde WHERE kunde.Kundennr = Beziehung_Auto_Kunde.kundennr
