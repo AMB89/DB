@@ -45,13 +45,13 @@ Values (kundenseq.nextval,'Franz' , 'Bremkauf' , 'Knaufweg 15' , '98770' , 'Buxt
 insert into Auto Values ('Gruene Ford Transit',6,'DA - XL 9');
 insert into Auto Values ('Blauer VW Golf',5,'BOR - H 9987');
 insert into Auto Values ('Weisses Mercedes Kombi',5,'DA - MH 312');
-insert into Auto Values ('Blauer Renault Twingo',5,'KI - T 556 ');
+insert into Auto Values ('Blauer Renault Twingo',5,'KI - T 556');
 insert into Auto Values ('Schwarzer Porsche',5,'HD - JJ 119');
 insert into Auto Values ('Schwarzer Porsche',5,'HD - UT 86');
 insert into Auto Values ('Verrosteter Renault R4',5,'WO - KJ 907');
 
 insert into Gesuch (suchender ,gesuchnr ,ort_start ,ort_ziel ,Abfahrt,
-gesuchte_plaetze ,bemerkung ,Vermittlungsgebuehr,erfasst_von ,erfasst_am ) VALUES (1,Gesuchseq.nextval, 'Augsburg','Muenchen',
+gesuchte_plaetze ,bemerkung ,Vermittlungsgebuehr,erfasst_von ,erfasst_am ) VALUES (8,Gesuchseq.nextval, 'Augsburg','Muenchen',
 TO_DATE( '5-5-15', 'DD-MM-YY'),2,'Abhohlung am liebsten Augsburg Hbf','bezhalt',1137327,TO_DATE( '2-5-15', 'DD-MM-YY') );
 insert into Gesuch (suchender ,gesuchnr ,ort_start ,ort_ziel ,Abfahrt,
 gesuchte_plaetze,erfasst_von ,erfasst_am ) VALUES (9,Gesuchseq.nextval, 'Mannheim','Dortmund',
@@ -107,25 +107,25 @@ insert into Angebot (Bietender,AngebotNr,Ort_Start,Ort_Ziel,Abfahrt,
 Gebotene_Plaetze,Treffpunkt,Erfasst_von,Erfasst_am) VALUES (7,Angebotseq.nextval,'Hannover','Bremen',TO_DATE( '30-6-15 9:00', 'DD-MM-YY HH24:MI'),
 1, 'Hannover, Linie 1, Fahrtrichtung Messe, Haltestelle Rotenbaumchaussee ',1717234, TO_DATE( '25-6-15', 'DD-MM-YY'));
 
-insert into Beziehung_Kunde_Gesuch VALUES (1,7);
-insert into Beziehung_Kunde_Gesuch VALUES (2,9);
-insert into Beziehung_Kunde_Gesuch VALUES (3,10);
-insert into Beziehung_Kunde_Gesuch VALUES (4,8);
-insert into Beziehung_Kunde_Gesuch VALUES (5,11);
-insert into Beziehung_Kunde_Gesuch VALUES (6,8);
-insert into Beziehung_Kunde_Gesuch VALUES (7,10);
-insert into Beziehung_Kunde_Gesuch VALUES (8,11);
+--insert into Beziehung_Kunde_Gesuch VALUES (1,7);
+--insert into Beziehung_Kunde_Gesuch VALUES (2,9);
+--insert into Beziehung_Kunde_Gesuch VALUES (3,10);
+--insert into Beziehung_Kunde_Gesuch VALUES (4,8);
+--insert into Beziehung_Kunde_Gesuch VALUES (5,11);
+--insert into Beziehung_Kunde_Gesuch VALUES (6,8);
+--insert into Beziehung_Kunde_Gesuch VALUES (7,10);
+--insert into Beziehung_Kunde_Gesuch VALUES (8,11);
 
-insert into Beziehung_Kunde_Angebot VALUES (1,1);
-insert into Beziehung_Kunde_Angebot VALUES (2,2);
-insert into Beziehung_Kunde_Angebot VALUES (3,1);
-insert into Beziehung_Kunde_Angebot VALUES (4,3);
-insert into Beziehung_Kunde_Angebot VALUES (5,4);
-insert into Beziehung_Kunde_Angebot VALUES (6,1);
-insert into Beziehung_Kunde_Angebot VALUES (7,3);
-insert into Beziehung_Kunde_Angebot VALUES (8,5);
-insert into Beziehung_Kunde_Angebot VALUES (9,6);
-insert into Beziehung_Kunde_Angebot VALUES (10,7);
+--insert into Beziehung_Kunde_Angebot VALUES (1,1);
+--insert into Beziehung_Kunde_Angebot VALUES (2,2);
+--insert into Beziehung_Kunde_Angebot VALUES (3,1);
+--insert into Beziehung_Kunde_Angebot VALUES (4,3);
+--insert into Beziehung_Kunde_Angebot VALUES (5,4);
+--insert into Beziehung_Kunde_Angebot VALUES (6,1);
+--insert into Beziehung_Kunde_Angebot VALUES (7,3);
+--insert into Beziehung_Kunde_Angebot VALUES (8,5);
+--insert into Beziehung_Kunde_Angebot VALUES (9,6);
+--insert into Beziehung_Kunde_Angebot VALUES (10,7);
 
 insert into Beziehung_Strecken VALUES (68, 'Augsburg', 'Muenchen');
 insert into Beziehung_Strecken VALUES (27, 'Bonn', 'Koeln');
@@ -162,4 +162,22 @@ VALUES  (1,1,1,8,1,'bezahlt',TO_DATE( '4-5-15', 'DD-MM-YY'),1717234,1717234,TO_D
 INSERT INTO Beziehung_Vermittlung (AngebotNr,GesuchNr,Fahrer,Mitfahrer,Fahrt_duerchgefuehrt,GEBUEHR,Bezahlt_am,Bezahlt_bei,vermittelt_von,vermittelt_am)
 VALUES  (3,2,1,9,0,'bezahlt',TO_DATE( '29-5-15', 'DD-MM-YY'),1717234,1137327,TO_DATE( '27-5-15', 'DD-MM-YY') );
 INSERT INTO Beziehung_Vermittlung (AngebotNr,GesuchNr,Fahrer,Mitfahrer,Fahrt_duerchgefuehrt,vermittelt_von,vermittelt_am)
-VALUES  (4,3,3,10,0,1717234,TO_DATE( '30-5-15', 'DD-MM-YY') );
+VALUES  (4,3,3,10,0,1717234,TO_DATE( '30-5-15', 'DD-MM-YY') ) ;
+
+
+INSERT INTO Beziehung_Auto_Kunde VALUES (1, 'DA - XL 9' );
+INSERT INTO Beziehung_Auto_Kunde VALUES (2, 'BOR - H 9987' );
+INSERT INTO Beziehung_Auto_Kunde VALUES (1, 'DA - MH 312' );
+INSERT INTO Beziehung_Auto_Kunde VALUES (3, 'KI - T 556' );
+INSERT INTO Beziehung_Auto_Kunde VALUES (4, 'HD - JJ 119' );
+INSERT INTO Beziehung_Auto_Kunde VALUES (3, 'KI - T 556' );
+INSERT INTO Beziehung_Auto_Kunde VALUES (5, 'HD - UT 86' );
+INSERT INTO Beziehung_Auto_Kunde VALUES (6, 'WO - KJ 907' );
+INSERT INTO Beziehung_Auto_Kunde VALUES (7, 'DA - MH 312' );
+
+
+
+
+
+
+insert into Parameter VALUES (0.08, 3, 10)
