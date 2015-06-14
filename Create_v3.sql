@@ -104,7 +104,7 @@ CREATE TABLE Angebot(
 
 	Abfahrt DATE 			 ,
 	Fruehste_Startzeit DATE  	 ,
-	Spateste_Startzeit DATE  	 ,
+	Spaeteste_Startzeit DATE  	 ,
 	Gebotene_Plaetze   NUMBER(2)     NOT NULL,
 	Treffpunkt         VARCHAR2(255)  NOT NULL,
 	Bemerkung          VARCHAR2(255)          ,
