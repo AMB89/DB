@@ -76,8 +76,8 @@ gesuchte_plaetze,erfasst_von ,erfasst_am ) VALUES (3,Gesuchseq.nextval, 'Stuttga
 TO_DATE( '23-6-15 12:00', 'DD-MM-YY HH24:MI'),TO_DATE( '23-6-15 18:00', 'DD-MM-YY HH24:MI'),2,1717234,TO_DATE( '20-6-15', 'DD-MM-YY') );
 
 
-insert into Angebot (Bietender,AngebotNr,Ort_Start,Ort_Ziel,Abfahrt,
-Gebotene_Plaetze,Treffpunkt,Bemerkung,Erfasst_von,Erfasst_am) VALUES (1,Angebotseq.nextval,'Mannheim','Muenchen',TO_DATE( '5-5-15 8:00', 'DD-MM-YY HH24:MI'),
+insert into Angebot (Bietender,AngebotNr,Ort_Start,Ort_Ziel,Ort_ueber,Abfahrt,
+Gebotene_Plaetze,Treffpunkt,Bemerkung,Erfasst_von,Erfasst_am) VALUES (1,Angebotseq.nextval,'Mannheim','Muenchen','Augsburg',TO_DATE( '5-5-15 8:00', 'DD-MM-YY HH24:MI'),
 2, 'Mannheim, ADAC-Stand Planetarium','Abholung Augsburg Hbf ok!, ca. 11:00 Uhr',1717234, TO_DATE( '1-5-15', 'DD-MM-YY'));
 insert into Angebot (Bietender,AngebotNr,Ort_Start,Ort_Ziel,Fruehste_Startzeit,Spateste_Startzeit,
 Gebotene_Plaetze,Treffpunkt,Erfasst_von,Erfasst_am) VALUES (2,Angebotseq.nextval,'Mannheim','Dortmund',TO_DATE( '29-5-15 12:00', 'DD-MM-YY HH24:MI'),
